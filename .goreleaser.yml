@@ -1,25 +1,27 @@
 # This is an example goreleaser.yaml file with some sane defaults.
 # Make sure to check the documentation at http://goreleaser.com
 builds:
-- env:
-  - CGO_ENABLED=0
+  - env: ["CGO_ENABLED=0"]
+    asmflags: ["all=-trimpath={{.Env.PWD}}"]
+    gcflags: ["all=-trimpath={{.Env.PWD}}"]
 archives:
-- replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
+  - files: ["none*"]
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  name_template: "{{ .Tag }}-snapshot"
 changelog:
   sort: asc
   filters:
     exclude:
-    - '^docs:'
-    - '^test:'
+      - '^docs:'
+      - '^test:'
 
 brew:
   skip_upload: auto
