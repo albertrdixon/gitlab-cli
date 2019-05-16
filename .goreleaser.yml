@@ -1,11 +1,5 @@
 # This is an example goreleaser.yaml file with some sane defaults.
 # Make sure to check the documentation at http://goreleaser.com
-before:
-  hooks:
-    # you may remove this if you don't use vgo
-    - go mod download
-    # you may remove this if you don't need go generate
-    - go generate ./...
 builds:
 - env:
   - CGO_ENABLED=0
@@ -26,3 +20,21 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
+
+brew:
+  skip_upload: auto
+  github:
+    owner: albertrdixon
+    name: homebrew-gitlab-cli
+  
+  folder: Formula
+  descrption: "Do a few dumb things with the Gitlab cli, probably not what you want."
+  homepage: "https://github.com/albertrdixon/gitlab-cli"
+  test: system "#{bin}/gitlab-cli --version"
+
+dockers:
+  - dockerfile: docker/Dockerfile
+    image_templates:
+      - "quay.io/albertrdixon/gitlab-cli:latest"
+      - "quay.io/albertrdixon/gitlab-cli:{{ .Tag }}"
+      - "quay.io/albertrdixon/gitlab-cli:v{{ .Major }}.{{ .Minor }}"
