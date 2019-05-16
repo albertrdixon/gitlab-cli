@@ -160,7 +160,8 @@ func listImageTags(projectName, registryName string) error {
 
 	tags := getAllRegistryTags(project.ID, registry.ID)
 	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Name", "Location", "Created At"})
+	table.SetHeader([]string{"Tag", "Location", "Created At"})
+	table.SetAlignment(tablewriter.ALIGN_LEFT)
 	for _, t := range tags {
 		created := "n/a"
 		if t.CreatedAt != nil {
