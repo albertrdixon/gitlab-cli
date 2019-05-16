@@ -30,7 +30,7 @@ brew:
     name: homebrew-gitlab-cli
   
   folder: Formula
-  descrption: "Do a few dumb things with the Gitlab cli, probably not what you want."
+  description: "Do a few dumb things with the Gitlab cli, probably not what you want."
   homepage: "https://github.com/albertrdixon/gitlab-cli"
   test: system "#{bin}/gitlab-cli --version"
 

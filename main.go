@@ -35,6 +35,7 @@ func newGitlabClient() *gitlab.Client {
 
 func main() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stdout})
+	app.Version(shortVersion())
 	cmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 	zerolog.SetGlobalLevel(zerolog.InfoLevel)
 	if *debug {
