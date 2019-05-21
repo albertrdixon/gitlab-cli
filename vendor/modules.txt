@@ -16,6 +16,9 @@ github.com/rs/zerolog
 github.com/rs/zerolog/log
 github.com/rs/zerolog/internal/cbor
 github.com/rs/zerolog/internal/json
+# github.com/spf13/afero v1.2.2
+github.com/spf13/afero
+github.com/spf13/afero/mem
 # github.com/xanzy/go-gitlab v0.17.0
 github.com/xanzy/go-gitlab
 # golang.org/x/net v0.0.0-20190514140710-3ec191127204
@@ -24,6 +27,9 @@ golang.org/x/net/context
 # golang.org/x/oauth2 v0.0.0-20190402181905-9f3314589c9a
 golang.org/x/oauth2
 golang.org/x/oauth2/internal
+# golang.org/x/text v0.3.2
+golang.org/x/text/transform
+golang.org/x/text/unicode/norm
 # google.golang.org/appengine v1.6.0
 google.golang.org/appengine/urlfetch
 google.golang.org/appengine/internal
