@@ -1,4 +1,4 @@
-module gitlab-cli
+module github.com/albertrdixon/gitlab-cli
 
 go 1.12
 
@@ -10,9 +10,11 @@ require (
 	github.com/mattn/go-runewidth v0.0.4 // indirect
 	github.com/olekukonko/tablewriter v0.0.1
 	github.com/rs/zerolog v1.14.3
+	github.com/spf13/afero v1.2.2
 	github.com/xanzy/go-gitlab v0.17.0
 	golang.org/x/net v0.0.0-20190514140710-3ec191127204 // indirect
 	golang.org/x/oauth2 v0.0.0-20190402181905-9f3314589c9a // indirect
+	golang.org/x/text v0.3.2 // indirect
 	google.golang.org/appengine v1.6.0 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
